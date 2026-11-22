@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kinolar Olami</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #101014;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+header {
+  background: #1b1b22;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 2px solid #e50914;
+}
+header h1 { color: #ff3038; margin: 0; }
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 15px;
+  background: #24242c;
+}
+nav a { color: white; text-decoration: none; }
+.search {
+  display: block;
+  width: 90%;
+  max-width: 500px;
+  margin: 25px auto;
+  padding: 14px;
+  border-radius: 8px;
+  border: 0;
+  font-size: 16px;
+}
+h2 { padding: 0 18px; }
+.movies {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(145px,1fr));
+  gap: 15px;
+  padding: 15px;
+}
+.movie {
+  background: #25252e;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  padding-bottom: 15px;
+}
+.poster {
+  height: 180px;
+  display: grid;
+  place-items: center;
+  font-size: 48px;
+  background: linear-gradient(140deg,#45151b,#151b35);
+}
+.movie h3 { font-size: 16px; }
+.movie a {
+  display: inline-block;
+  background: #e50914;
+  color: white;
+  padding: 9px 18px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+footer {
+  text-align: center;
+  padding: 25px;
+  color: #aaa;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🎬 KINOLAR OLAMI</h1>
+  <p>Eng yaxshi kinolar va animelar olami</p>
+</header>
+
+<nav>
+  <a href="#">Bosh sahifa</a>
+  <a href="#kinolar">Kinolar</a>
+  <a href="#anime">Anime</a>
+</nav>
+
+<input class="search" id="search"
+placeholder="🔍 Kino nomini qidiring...">
+
+<h2 id="kinolar">🔥 Mashhur kinolar</h2>
+
+<div class="movies" id="movies">
+
+  <div class="movie">
+    <div class="poster">🎬</div>
+    <h3>Avatar</h3>
+    <a href="https://www.youtube.com/" target="_blank">Treyler</a>
+  </div>
+
+  <div class="movie">
+    <div class="poster">🍿</div>
+    <h3>Interstellar</h3>
+    <a href="https://www.youtube.com/" target="_blank">Treyler</a>
+  </div>
+
+  <div class="movie" id="anime">
+    <div class="poster">⚔️</div>
+    <h3>Anime olami</h3>
+    <a href="https://www.youtube.com/" target="_blank">Treyler</a>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 Kinolar Olami
+</footer>
+
+<script>
+const search = document.getElementById("search");
+const movies = document.querySelectorAll(".movie");
+
+search.addEventListener("input", () => {
+  const value = search.value.toLowerCase();
+  movies.forEach(movie => {
+    movie.style.display =
+      movie.innerText.toLowerCase().includes(value)
+      ? "" : "none";
+  });
+});
+</script>
+
+</body>
+  </html>
+  
